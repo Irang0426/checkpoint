@@ -1,23 +1,31 @@
 package com.github.irang.checkpoint.service;
 
+import com.github.irang.checkpoint.dto.UserDto;
 import com.github.irang.checkpoint.entity.User;
 import com.github.irang.checkpoint.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public User save(User user) {
-        return userRepository.save(user);
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder){
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
-    public Optional<User> findById(Long id) {
-        return userRepository.findById(id);
+    public void registerUser(UserDto userDto){
+        User user = new User();
+        user.setUsername(userDto.getUsername());
+        user.setEmail(userDto.getEmail());
+        user.setNickname(userDto.getNickname());
+        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+        userRepository.save(user);
     }
 }
