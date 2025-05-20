@@ -1,5 +1,6 @@
 package com.github.irang.checkpoint.controller;
 
+import com.github.irang.checkpoint.dto.UserDto;
 import com.github.irang.checkpoint.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
