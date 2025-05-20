@@ -11,15 +11,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class AuthController {
 
-    private final UserService userService;  // 사용자 생성, 회원가입 처리 서비스
-
+    private final UserService userService;
     public AuthController(UserService userService){
         this.userService = userService;
     }
 
     @GetMapping("/login")
     public String login(){
-        return "login";  // src/main/resources/templates/login.html
+        return "login";
     }
 
     @GetMapping("/signup")
