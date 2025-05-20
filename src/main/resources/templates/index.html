@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheckPoint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://www.svgrepo.com/show/522611/star.svg" />
+</head>
+<body class="bg-zinc-900 text-white min-h-screen p-6">
+
+<header class="mb-8 flex justify-between items-center">
+    <div>
+        <h1 class="text-4xl font-bold flex items-center gap-2">
+            ⭐ <span>CheckPoint</span>
+        </h1>
+        <p class="text-zinc-400">당신의 게임 리뷰 저장소</p>
+    </div>
+    <div>
+        <a href="/login" class="bg-zinc-700 hover:bg-zinc-600 text-white font-medium py-2 px-4 rounded-lg transition">
+            로그인
+        </a>
+    </div>
+</header>
+
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="bg-zinc-800 border border-zinc-700 rounded-2xl p-4 shadow">
+        <h2 class="text-xl font-semibold mb-2">최신 게임</h2>
+        <p class="text-zinc-400">최신 출시된 게임을 확인해보세요.</p>
+        <button class="mt-4 bg-yellow-500 hover:bg-yellow-400 text-zinc-900 font-medium py-2 px-4 rounded">
+            보러가기
+        </button>
+    </div>
+
+    <div class="bg-zinc-800 border border-zinc-700 rounded-2xl p-4 shadow">
+        <h2 class="text-xl font-semibold mb-2">인기 리뷰</h2>
+        <p class="text-zinc-400">다른 유저들이 많이 좋아한 리뷰를 확인하세요.</p>
+        <button class="mt-4 bg-yellow-500 hover:bg-yellow-400 text-zinc-900 font-medium py-2 px-4 rounded">
+            보러가기
+        </button>
+    </div>
+
+    <div class="bg-zinc-800 border border-zinc-700 rounded-2xl p-4 shadow">
+        <h2 class="text-xl font-semibold mb-2">내 리뷰</h2>
+        <p class="text-zinc-400">내가 작성한 리뷰를 모아볼 수 있어요.</p>
+        <button class="mt-4 bg-yellow-500 hover:bg-yellow-400 text-zinc-900 font-medium py-2 px-4 rounded">
+            보러가기
+        </button>
+    </div>
+</section>
+
+<footer class="mt-12 text-zinc-600 text-sm text-center">
+    <p>&copy; 2025 CheckPoint. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
