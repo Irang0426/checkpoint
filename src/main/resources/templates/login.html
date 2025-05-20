@@ -1,15 +1,57 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>로그인 - CheckPoint</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://www.svgrepo.com/show/522611/star.svg" />
 </head>
-<body>
-<h2>로그인</h2>
-<form th:action="@{/login}" method="post">
-  <label>아이디: <input type="text" name="username" /></label><br />
-  <label>비밀번호: <input type="password" name="password" /></label><br />
-  <button type="submit">로그인</button>
-</form>
+<body class="bg-zinc-900 text-white min-h-screen flex flex-col items-center justify-center p-6">
+
+<header class="mb-8 w-full max-w-md">
+  <h1 class="text-4xl font-bold flex items-center gap-2 justify-center">
+    <a th:href="@{/}" class="flex items-center gap-2 no-underline hover:no-underline">
+      ⭐ <span>CheckPoint</span>
+    </a>
+  </h1>
+  <p class="text-zinc-400 text-center mt-1">당신의 게임 리뷰 저장소</p>
+</header>
+
+<main class="bg-zinc-800 border border-zinc-700 rounded-2xl p-8 shadow-md w-full max-w-md">
+  <h2 class="text-2xl font-semibold mb-6 text-center">로그인</h2>
+  <form th:action="@{/login}" method="post" class="flex flex-col gap-4">
+    <label class="flex flex-col text-sm font-medium">
+      아이디
+      <input type="text" name="username" required
+             class="mt-1 rounded-md bg-zinc-700 border border-zinc-600 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+    </label>
+    <label class="flex flex-col text-sm font-medium">
+      비밀번호
+      <input type="password" name="password" required
+             class="mt-1 rounded-md bg-zinc-700 border border-zinc-600 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+    </label>
+    <button type="submit"
+            class="mt-4 bg-yellow-500 hover:bg-yellow-400 text-zinc-900 font-semibold py-2 rounded-lg transition">
+      로그인
+    </button>
+  </form>
+
+  <p class="mt-6 text-center text-zinc-400">
+    아직 회원이 아니신가요?
+    <a th:href="@{/signup}" class="text-yellow-500 hover:underline font-semibold">회원가입</a>
+  </p>
+</main>
+
+<footer class="mt-12 text-zinc-600 text-sm text-center w-full max-w-md">
+  <p>&copy; 2025 CheckPoint. All rights reserved.</p>
+</footer>
+
+<script th:inline="javascript" th:if="${successMessage != null}">
+  window.onload = function() {
+    alert([[${successMessage}]]);
+  };
+</script>
 </body>
 </html>
+

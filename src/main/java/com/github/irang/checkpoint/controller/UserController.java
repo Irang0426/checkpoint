@@ -1,3 +1,4 @@
+/*
 package com.github.irang.checkpoint.controller;
 
 import com.github.irang.checkpoint.entity.User;
@@ -25,3 +26,4 @@ public class UserController {
                 .orElse(ResponseEntity.notFound().build());
     }
 }
+*/

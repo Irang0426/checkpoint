@@ -32,5 +32,11 @@ public class User {
     private LocalDateTime createdAt;
 
     @Enumerated(EnumType.STRING)
-    private Grade grade;
+    @Column(nullable = false)
+    private Grade grade = Grade.USER;  // 기본값 지정
+
+    // 생성자
+    public User() {
+        this.grade = Grade.USER;
+    }
 }
